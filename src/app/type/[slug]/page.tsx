@@ -18,7 +18,7 @@ export default async function Type({ params }: any) {
           </b>
         </h1>
         <p className="opacity-50">
-          Here you can see all {type.name}'s pokemons!
+          Here you can see all {type.name}s pokemons!
         </p>
       </div>
       <div className="flex flex-wrap justify-center">

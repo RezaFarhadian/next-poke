@@ -1,3 +1,4 @@
+import StatsChart from "@/components/statsChart";
 import { capitalizeFirstLetter } from "@/lib/utils"
 import Image from "next/image";
 
@@ -23,6 +24,7 @@ export default async function Pokemon({ params }: any) {
         <p className="opacity-50">
           Height: {pokemon.height}, Weight: {pokemon.weight}
         </p>
+        <StatsChart />
       </div>
     </div>
   )

@@ -1,4 +1,5 @@
 import { capitalizeFirstLetter, getLastSegmentOfURL } from "@/lib/utils"
+import Link from "next/link"
 
 async function getPokemonsByType(slug: string) {
   const res = await fetch(`https://pokeapi.co/api/v2/type/${slug}`)
@@ -23,7 +24,7 @@ export default async function Type({ params }: any) {
       </div>
       <div className="flex flex-wrap justify-center">
         { type.pokemon.map((pokemon: any, i: number) => (
-          <a
+          <Link
             key={i}
             href={`/pokemon/${getLastSegmentOfURL(pokemon.pokemon.url)}`}
             className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
@@ -41,7 +42,7 @@ export default async function Type({ params }: any) {
             <p className="m-0 max-w-[30ch] text-sm opacity-50">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             </p>
-          </a>
+          </Link>
         )) }
       </div>
     </div>

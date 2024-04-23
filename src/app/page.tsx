@@ -1,6 +1,7 @@
 import Search from "@/components/search";
 import { capitalizeFirstLetter, getLastSegmentOfURL } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 import { FiSearch } from "react-icons/fi";
 
 async function getTypes() {
@@ -56,7 +57,7 @@ export default async function Home() {
       <div className="mb-32 mt-16 lg:mt-0 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         {
           types.results.map((type: any, i: number) =>
-            <a
+            <Link
               key={i}
               href={`/type/${getLastSegmentOfURL(type.url)}`}
               className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
@@ -74,7 +75,7 @@ export default async function Home() {
               {/*<p className="m-0 max-w-[30ch] text-sm opacity-50">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </p>*/}
-            </a>
+            </Link>
           )
         }
       </div>
